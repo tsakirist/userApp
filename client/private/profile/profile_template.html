@@ -10,17 +10,17 @@
                         <div class="form-group input-group">
                             <label class="sr-only">123211231</label>
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input type="text" id="username" ng-model="$ctrl.username" class="form-control" readonly>
+                            <input type="text" id="username" ng-model="$ctrl.Session.username" class="form-control" readonly>
                         </div>
                         <div class="form-group input-group">
                             <label for="password" class="sr-only"></label>
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input type="password" id="password" ng-model="$ctrl.password" class="form-control" readonly>
+                            <input type="text" id="password" ng-model="$ctrl.Session.password" class="form-control" readonly>
                         </div>
                         <div class="form-group input-group">
                             <label for="email" class="sr-only"></label>
                             <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                            <input type="email"id="email" ng-model="$ctrl.email" class="form-control" readonly>
+                            <input type="email" id="email" ng-model="$ctrl.Session.email" class="form-control" readonly>
                         </div>
                     </form>
                     <a ui-sref="edit" class="btn btn-md btn-primary">Edit</a>

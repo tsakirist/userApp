@@ -14,10 +14,10 @@ angular.module('privateApp')
             .state('profile', {
                 url: '/private/profile',
                 component: 'profileComp',
-                onEnter: function($http, Session) {
+                onEnter: ($http, Session) => {
+                    console.log('ghi');
                     $http.get('/api/profile/user')
                         .then(function(res) {
-                            console.log('Resp: ', res);
                             Session.create(res.data);
                         }, function (err) {
                             console.log('error');

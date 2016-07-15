@@ -2,9 +2,11 @@ const editCtrl = ['AuthService', '$state', 'Session', function(AuthService, $sta
 
     const self = this;
 
-    self.username = Session.username;
-    self.password = Session.password;
-    self.email = Session.email;
+    self.Session = Session;
+
+    let prev_username = Session.username;
+    let prev_password = Session.password;
+    let prev_email = Session.email;
 
     self.getUsername = () => {
         return Session.username;
@@ -16,6 +18,25 @@ const editCtrl = ['AuthService', '$state', 'Session', function(AuthService, $sta
 
     self.getEmail = () => {
         return Session.email;
+    };
+
+    self.setFieldsOnError = () => {
+        let data = {
+            username: prev_username,
+            password: prev_password,
+            email: prev_email
+        };
+        Session.set(data);
+    };
+
+    self.edit = () => {
+        AuthService.edit(Session.username, Session.password, Session.email, Session.id)
+            .then(() => {
+                $state.go('profile');
+            }, () => {
+                alert('Some error occurred');
+                self.setFieldsOnError();
+            });
     };
 }];
 

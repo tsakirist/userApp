@@ -2,10 +2,7 @@ const profileCtrl = ['Session', function(Session) {
 
     const self = this;
 
-    self.username = Session.username;
-    self.password = Session.password;
-    self.email = Session.email;
-    self.id = Session.id;
+    self.Session = Session;
 
     self.getUsername = () => {
         return Session.username;
