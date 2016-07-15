@@ -9,11 +9,11 @@ angular.module('pubApp')
         function login(username, password) {
             let deferred = $q.defer();
             $http.post('/api/login', {username: username , password: password})
-                .then(function (res) {
+                .then((res) => {
                         console.log('Logged in ', res.data);
                         deferred.resolve();
                     },
-                    function (err) {
+                    (err) => {
                         alert("Wrong username or Password");
                         deferred.reject();
                     });
@@ -24,11 +24,11 @@ angular.module('pubApp')
         function register(username, password, email) {
             let deferred = $q.defer();
             $http.post('/api/users', {username: username, password: password, email: email})
-                .then(function (res) {
+                .then((res) => {
                         console.log("Successful registration!");
                         deferred.resolve();
                     },
-                    function(err) {
+                    (err) => {
                         console.log('Error registration' , err.message);
                         alert("Error occurred, try again!");
                         deferred.reject();

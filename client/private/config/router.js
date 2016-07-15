@@ -15,11 +15,10 @@ angular.module('privateApp')
                 url: '/private/profile',
                 component: 'profileComp',
                 onEnter: ($http, Session) => {
-                    console.log('ghi');
                     $http.get('/api/profile/user')
-                        .then(function(res) {
+                        .then((res) => {
                             Session.create(res.data);
-                        }, function (err) {
+                        }, (err) => {
                             console.log('error');
                         });
                 }

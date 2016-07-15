@@ -1,7 +1,7 @@
 angular.module('pubApp')
     .factory('AuthInterceptor', ['$q', '$window', ($q, $window) => {
         return {
-            responseError : function (response)  {
+            responseError : (response) => {
                 let deferred = $q.defer();
                 if(response.status === 401) {
                     console.log("Interceptor caught a 401");
@@ -11,7 +11,7 @@ angular.module('pubApp')
                 return deferred.promise;
             }
         }
-    }])
+    }]);
     // .config(['$httpProvider', ($httpProvider) => {
     //     $httpProvider.interceptors.push('AuthInterceptor');
     // }]);

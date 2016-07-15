@@ -11,10 +11,10 @@ const registerCtrl = ['$state', 'AuthService', function($state, AuthService) {
             return;
         }
         AuthService.register(self.username, self.password, self.email)
-            .then(function () {
+            .then(() => {
                     $state.go('login');
                 },
-                function() {
+                () => {
                     self.clearFields();
                 });
     };

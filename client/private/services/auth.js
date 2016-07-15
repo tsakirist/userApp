@@ -9,11 +9,11 @@ angular.module('privateApp')
         function logout() {
             let deferred = $q.defer();
             $http.get('/private/logout')
-                .then(function (res) {
+                .then((res) => {
                         if(Session) {Session.destroy();}
                         deferred.resolve();
                     },
-                    function (err) {
+                    (err) => {
                         console.log('ERROR ', err.message);
                         deferred.reject();
                     });

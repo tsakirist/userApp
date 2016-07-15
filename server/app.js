@@ -26,6 +26,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use('/node_modules', express.static('../node_modules/'));
 app.use(express.static('../client/'));
 app.use(router);
 

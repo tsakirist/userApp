@@ -11,10 +11,10 @@ const loginCtrl = ['AuthService', '$window', function(AuthService, $window) {
             return;
         }
         AuthService.login(self.username, self.password)
-            .then(function() {
+            .then(() => {
                 $window.location.href = "/private/profile";
                 },
-                function() {
+                () => {
                     self.clearFields();
                 });
     };
