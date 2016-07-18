@@ -1,4 +1,4 @@
 #Exclude some files from git
 
 .*/node_modules
-./idea
+.idea
