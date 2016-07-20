@@ -1,32 +1,58 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="Absolute-Center">
-            <form role="form">
-                <div class="col-sm-12 col-md-10 col-md-offset-1">
-                    <form class="form-horizontal" role="form">
-                        <div style="color:whitesmoke">
-                            <h2>Profile</h2>
-                        </div>
-                        <div class="form-group input-group">
-                            <label class="sr-only">123211231</label>
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input type="text" id="username" ng-model="$ctrl.Session.username" class="form-control" readonly>
-                        </div>
-                        <div class="form-group input-group">
-                            <label for="password" class="sr-only"></label>
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input type="text" id="password" ng-model="$ctrl.Session.password" class="form-control" readonly>
-                        </div>
-                        <div class="form-group input-group">
-                            <label for="email" class="sr-only"></label>
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                            <input type="email" id="email" ng-model="$ctrl.Session.email" class="form-control" readonly>
-                        </div>
-                    </form>
-                    <a ui-sref="edit" class="btn btn-md btn-primary">Edit</a>
-                    <a ui-sref="logout" class="btn btn-md  btn-primary btn-danger">Logout</a>
-                </div>
-            </form>
+<!--<div class="container-fluid">-->
+    <!--<div class="row">-->
+        <!--<div class="Absolute-Center">-->
+            <!--<form role="form">-->
+                <!--<div class="col-sm-12 col-md-10 col-md-offset-1">-->
+                    <!--<form class="form-horizontal" role="form">-->
+                        <!--<div style="color:whitesmoke">-->
+                            <!--<h2>Profile</h2>-->
+                        <!--</div>-->
+                        <!--<div class="form-group input-group">-->
+                            <!--<label class="sr-only"></label>-->
+                            <!--<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>-->
+                            <!--<input type="text" id="username" ng-model="$ctrl.Session.username" class="form-control" readonly>-->
+                        <!--</div>-->
+                        <!--<div class="form-group input-group">-->
+                            <!--<label for="password" class="sr-only"></label>-->
+                            <!--<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>-->
+                            <!--<input type="text" id="password" ng-model="$ctrl.Session.password" class="form-control" readonly>-->
+                        <!--</div>-->
+                        <!--<div class="form-group input-group">-->
+                            <!--<label for="email" class="sr-only"></label>-->
+                            <!--<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>-->
+                            <!--<input type="email" id="email" ng-model="$ctrl.Session.email" class="form-control" readonly>-->
+                        <!--</div>-->
+                    <!--</form>-->
+                    <!--<a ui-sref="edit" class="btn btn-md btn-primary">Edit</a>-->
+                    <!--<a ui-sref="logout" class="btn btn-md  btn-primary btn-danger">Logout</a>-->
+                <!--</div>-->
+            <!--</form>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<form name="myForm">
+    <div flex="15" flex-offset="40">
+        <div layout="column" flex>
+            <md-input-container layout-padding class="md-icon-float">
+                <md-icon>person</md-icon>
+                <label>Username</label>
+                <input type="text" required name="username" ng-model="$ctrl.Session.username" readonly>
+            </md-input-container>
+            <md-input-container layout-padding class="md-icon-float">
+                <md-icon>lock</md-icon>
+                <label>Password</label>
+                <input type="text" required name="password" ng-model="$ctrl.Session.password" readonly>
+            </md-input-container>
+            <md-input-container layout-padding class="md-icon-float">
+                <md-icon>email</md-icon>
+                <label>Email</label>
+                <input type="email" ng-model="$ctrl.Session.email" required name="email" readonly>
+            </md-input-container>
+            <div layout="row">
+                <a ui-sref="edit" flex class="md-button md-raised md-primary">Edit</a>
+                <a ui-sref="logout" flex class="md-button md-raised md-warn">Logout</a>
+            </div>
         </div>
     </div>
-</div>
+</form>

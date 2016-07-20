@@ -1,30 +1,67 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="Absolute-Center">
-            <div class="col-sm-12 col-md-10 col-md-offset-1">
-                <form role="form">
-                    <h2 style="color:whitesmoke">Register</h2>
-                    <div class="form-group input-group">
-                        <label for="username" class="sr-only">Username</label>
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input type="text" id="username" ng-model="$ctrl.username" class="form-control" placeholder="Username" required autofocus>
-                    </div>
-                    <div class="form-group input-group">
-                        <label for="password" class="sr-only"></label>
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input type="password" id="password" ng-model="$ctrl.password" class="form-control" placeholder="Password" required autofocus>
-                    </div>
-                    <div class="form-group input-group">
-                        <label for="email" class="sr-only"></label>
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                        <input type="email"id="email" ng-model="$ctrl.email" class="form-control" placeholder="Email"  required autofocus>
-                    </div>
-                    <div class="btn-toolbar">
-                        <button class="btn btn-md btn-primary col-xs" ng-click="$ctrl.register()">Submit</button>
-                        <a ui-sref="login" class="btn btn-md btn-primary btn-danger">Cancel</a>
-                    </div>
-                </form>
+<!--<div class="container-fluid">-->
+    <!--<div class="row">-->
+        <!--<div class="Absolute-Center">-->
+            <!--<div class="col-sm-12 col-md-10 col-md-offset-1">-->
+                <!--<form role="form">-->
+                    <!--<h2 style="color:whitesmoke">Register</h2>-->
+                    <!--<div class="form-group input-group">-->
+                        <!--<label for="username" class="sr-only">Username</label>-->
+                        <!--<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>-->
+                        <!--<input type="text" id="username" ng-model="$ctrl.username" class="form-control" placeholder="Username" required autofocus>-->
+                    <!--</div>-->
+                    <!--<div class="form-group input-group">-->
+                        <!--<label for="password" class="sr-only"></label>-->
+                        <!--<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>-->
+                        <!--<input type="password" id="password" ng-model="$ctrl.password" class="form-control" placeholder="Password" required autofocus>-->
+                    <!--</div>-->
+                    <!--<div class="form-group input-group">-->
+                        <!--<label for="email" class="sr-only"></label>-->
+                        <!--<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>-->
+                        <!--<input type="email" id="email" ng-model="$ctrl.email" class="form-control" placeholder="Email"  required autofocus>-->
+                    <!--</div>-->
+                    <!--<div class="btn-toolbar">-->
+                        <!--<button class="btn btn-md btn-primary col-xs" ng-click="$ctrl.register()">Submit</button>-->
+                        <!--<a ui-sref="login" class="btn btn-md btn-primary btn-danger">Cancel</a>-->
+                    <!--</div>-->
+                <!--</form>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<form name="myForm">
+    <div flex="15" flex-offset="40">
+        <div layout="column" flex>
+            <md-input-container layout-padding class="md-icon-float">
+                <md-icon>person</md-icon>
+                <label>Username</label>
+                <input type="text" required name="username" ng-model="$ctrl.username">
+                <div ng-messages="myForm.username.$error">
+                    <div ng-message="required">This field is required!</div>
+                </div>
+            </md-input-container>
+            <md-input-container layout-padding class="md-icon-float">
+                <md-icon>lock</md-icon>
+                <label>Password</label>
+                <input type="password" required name="password" ng-model="$ctrl.password">
+                <div ng-messages="myForm.password.$error">
+                    <div ng-message="required">This field is required!</div>
+                </div>
+            </md-input-container>
+            <md-input-container layout-padding class="md-icon-float">
+                <md-icon>email</md-icon>
+                <label>Email</label>
+                <input type="email" ng-model="$ctrl.email" required name="email">
+                <div ng-messages="myForm.email.$error">
+                    <div ng-message="required">This field is required!</div>
+                    <div ng-message="email">Email address is invalid!</div>
+                </div>
+            </md-input-container>
+            <div layout="row" >
+                <md-button flex ng-click="$ctrl.register()"class="md-raised md-primary">Submit</md-button>
+                <a ui-sref="login" flex class="md-button md-raised md-warn">Cancel</a>
             </div>
         </div>
     </div>
-</div>
+</form>
+

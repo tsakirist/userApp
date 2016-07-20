@@ -1,13 +1,18 @@
-const registerCtrl = ['$state', 'AuthService', function($state, AuthService) {
+const registerCtrl = ['$state', 'AuthService', '$mdToast', function($state, AuthService, $mdToast) {
 
     const self = this;
 
-    self.username   = '';
-    self.pasword    = '';
-    self.email      = '';
+    self.username = '';
+    self.password = '';
+    self.email = '';
 
     self.register =  () => {
         if(self.username=='' || self.password=='' || self.email=='') {
+            $mdToast.show(
+                $mdToast.simple('Empty fields! Try again.')
+                    .position('top')
+                    .hideDelay(3000)
+            );
             return;
         }
         AuthService.register(self.username, self.password, self.email)

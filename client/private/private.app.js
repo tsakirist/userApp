@@ -1,1 +1,1 @@
-angular.module('privateApp', ['ui.router']);
+angular.module('privateApp', ['ui.router', 'ngMaterial']);

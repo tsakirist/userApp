@@ -4,23 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="/">
-    <link rel="stylesheet" type="text/css" href="../css/mycss.css">
-    <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link rel="stylesheet" type="text/css" href="../css/mycss.css">-->
+    <!--<link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="../../node_modules/angular-material/angular-material.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="../../node_modules/angular/angular.min.js"></script>
     <script src="../../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="../../node_modules/angular-material/angular-material.min.js"></script>
+    <script src="../../node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="../../node_modules/angular-aria/angular-aria.min.js"></script>
+    <script src="../../node_modules/angular-messages/angular-messages.min.js"></script>
     <script src="../private/private.app.js"></script>
     <script src="../private/config/router.js"></script>
     <script src="../private/config/interceptor.js"></script>
-    <script src="../private/profile/profilecomp.js"></script>
-    <script src="../private/logout/logoutcomp.js"></script>
     <script src="../private/edit/editcomp.js"></script>
+    <script src="../private/logout/logoutcomp.js"></script>
+    <script src="../private/profile/profilecomp.js"></script>
     <script src="../private/services/auth.js"></script>
     <script src="../private/services/session.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
 </head>
-<body ng-app="privateApp">
-    <br>
-    <div ui-view></div>
+<body ng-app="privateApp" background="../css/1.jpg">
+<br><br>
+<div ui-view></div>
 </body>
 </html>

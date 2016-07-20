@@ -1,26 +1,58 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="Absolute-Center">
-            <div class="col-sm-12 col-md-10 col-md-offset-1">
-                <form role="form">
-                    <h2 style="color:whitesmoke">Login</h2>
-                    <div class="form-group input-group">
-                        <label for="username" class="sr-only">Username</label>
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input type="text" id="username" ng-model="$ctrl.username" class="form-control" placeholder="Username" required autofocus>
-                    </div>
-                    <div class="form-group input-group">
-                        <label for="password" class="sr-only"></label>
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input type="password" id="password" ng-model="$ctrl.password" class="form-control" placeholder="Password" required autofocus>
-                    </div>
-                    <div class="btn-toolbar row">
-                        <button class="btn btn-md btn-primary" ng-click="$ctrl.login()">Login</button>
-                        <a ui-sref="register" class="btn btn-md btn-primary">Register</a>
-                    </div>
-                </form>
+<!--<div class="container-fluid">-->
+    <!--<div class="row">-->
+        <!--<div class="Absolute-Center">-->
+            <!--<div class="col-sm-12 col-md-10 col-md-offset-1">-->
+                <!--<form role="form">-->
+                    <!--<h2 style="color:whitesmoke">Login</h2>-->
+                    <!--<div class="form-group input-group">-->
+                        <!--<label for="username" class="sr-only">Username</label>-->
+                        <!--<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>-->
+                        <!--<input type="text" id="username" ng-model="$ctrl.username" class="form-control" placeholder="Username" required autofocus>-->
+                    <!--</div>-->
+                    <!--<div class="form-group input-group">-->
+                        <!--<label for="password" class="sr-only"></label>-->
+                        <!--<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>-->
+                        <!--<input type="password" id="password" ng-model="$ctrl.password" class="form-control" placeholder="Password" required autofocus>-->
+                    <!--</div>-->
+                    <!--<div class="btn-toolbar row">-->
+                        <!--<button class="btn btn-md btn-primary" ng-click="$ctrl.login()">Login</button>-->
+                        <!--<a ui-sref="register" class="btn btn-md btn-primary">Register</a>-->
+                    <!--</div>-->
+                <!--</form>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+
+<!--<md-toolbar layout="row" layout-padding layout-align="center center">-->
+    <!--<span class="md-toolbar-item md-headline">Login</span>-->
+<!--</md-toolbar>-->
+
+<form name="myForm">
+    <div flex="15" flex-offset="40">
+        <div layout="column" flex>
+            <md-input-container layout-padding class="md-icon-float">
+                <md-icon>person</md-icon>
+                <label>Username</label>
+                <input type="text" required name="username" ng-model="$ctrl.username">
+                <div ng-messages="myForm.username.$error">
+                    <div ng-message="required">This field is required!</div>
+                </div>
+            </md-input-container>
+            <md-input-container layout-padding class="md-icon-float">
+                <md-icon>lock</md-icon>
+                <label>Password</label>
+                <input type="password" required name="password" ng-model="$ctrl.password">
+                <div ng-messages="myForm.password.$error">
+                    <div ng-message="required">This field is required!</div>
+                </div>
+            </md-input-container>
+            <div layout="row">
+                <md-button flex ng-click="$ctrl.login()" class="md-raised md-primary">Login</md-button>
+                <a ui-sref="register" flex class="md-button md-raised md-primary">Register</a>
             </div>
         </div>
     </div>
-</div>
+</form>
 
