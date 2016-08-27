@@ -1,4 +1,10 @@
 # userApp
-mini profile user app
+Mini profile application using the **_MEAN_** stack.
 
-Angular Material UI
+## Install dependencies
+```
+    npm Install
+```
+## Branches
+- **master** : Main UI with boostrap.
+- **angular-material** : Main UI with angular-material
